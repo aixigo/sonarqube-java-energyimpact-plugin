@@ -1,0 +1,15 @@
+{
+  "title": "AvoidArrayList",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "5min"
+  },
+  "tags": [
+    "carbon-waste",
+    "energy",
+    "green-coding"
+  ],
+  "defaultSeverity": "Minor"
+}
