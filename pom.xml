@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
    <modelVersion>4.0.0</modelVersion>
 
-   <groupId>com.aixigo.guilds.green-coding</groupId>
-   <artifactId>sonarqube-plugin</artifactId>
+   <groupId>com.aixigo</groupId>
+   <artifactId>sonarqube-java-energyimpact-plugin</artifactId>
    <version>0.1-SNAPSHOT</version>
 
    <packaging>sonar-plugin</packaging>
@@ -17,6 +17,14 @@
 
       <sonarqube.java.plugin.version>7.16.0.30901</sonarqube.java.plugin.version>
    </properties>
+
+   <licenses>
+      <license>
+         <name>GNU LGPL 3</name>
+         <url>http://www.gnu.org/licenses/lgpl.txt</url>
+         <distribution>repo</distribution>
+      </license>
+   </licenses>
 
    <dependencies>
       <dependency>
@@ -50,7 +58,7 @@
             <version>1.21.0.505</version>
             <extensions>true</extensions>
             <configuration>
-               <pluginClass>com.aixigo.guilds.green_coding.Plugin</pluginClass>
+               <pluginClass>com.aixigo.energyimpact.Plugin</pluginClass>
                <pluginDescription>A plugin that guides you to be more energy efficient</pluginDescription>
                <sonarQubeMinVersion>9.9</sonarQubeMinVersion>
                <requirePlugins>java:${sonarqube.java.plugin.version}</requirePlugins>

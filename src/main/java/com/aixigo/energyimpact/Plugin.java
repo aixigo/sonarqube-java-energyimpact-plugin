@@ -1,7 +1,7 @@
-package com.aixigo.guilds.green_coding;
+package com.aixigo.energyimpact;
 
-import com.aixigo.guilds.green_coding.rules.RulesCheckRegistrar;
-import com.aixigo.guilds.green_coding.rules.RulesDefinition;
+import com.aixigo.energyimpact.rules.RulesCheckRegistrar;
+import com.aixigo.energyimpact.rules.RulesDefinition;
 
 public class Plugin implements org.sonar.api.Plugin
 {

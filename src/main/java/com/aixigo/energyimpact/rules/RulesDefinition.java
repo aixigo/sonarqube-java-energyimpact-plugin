@@ -1,4 +1,4 @@
-package com.aixigo.guilds.green_coding.rules;
+package com.aixigo.energyimpact.rules;
 
 import java.util.Collections;
 import org.sonar.api.SonarRuntime;
@@ -6,7 +6,7 @@ import org.sonarsource.analyzer.commons.RuleMetadataLoader;
 
 public class RulesDefinition implements org.sonar.api.server.rule.RulesDefinition
 {
-   public static final String REPOSITORY_KEY = "green-coding-guild-java";
+   public static final String REPOSITORY_KEY = "java-energyimpact";
 
    private final SonarRuntime runtime;
 
@@ -19,10 +19,10 @@ public class RulesDefinition implements org.sonar.api.server.rule.RulesDefinitio
    public void define( Context context )
    {
       NewRepository repository = context.createRepository( REPOSITORY_KEY, "java" )
-         .setName( "Green Coding Guild Repository" );
+         .setName( "Java Energy Impact" );
 
       RuleMetadataLoader ruleMetadataLoader = new RuleMetadataLoader(
-         "com/aixigo/guilds/green_coding/rules",
+         "com/aixigo/energyimpact/rules",
          runtime
       );
 

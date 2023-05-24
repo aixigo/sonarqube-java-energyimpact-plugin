@@ -13,7 +13,7 @@
 //  Aachen, Germany
 //
 
-package com.aixigo.guilds.green_coding.rules;
+package com.aixigo.energyimpact.rules;
 
 import java.util.Collections;
 import java.util.List;
