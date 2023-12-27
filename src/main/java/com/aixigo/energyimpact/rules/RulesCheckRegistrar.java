@@ -12,9 +12,9 @@ public class RulesCheckRegistrar implements CheckRegistrar
    public void register( RegistrarContext registrarContext )
    {
       registrarContext.registerClassesForRepository(
-         RulesDefinition.REPOSITORY_KEY,
-         Collections.singletonList( AvoidArrayListRule.class ),
-         Collections.singletonList( AvoidArrayListRule.class )
+         JavaEnergyImpactRulesDefinition.REPOSITORY_KEY,
+         Collections.singletonList( AvoidJavaCollectionFrameworkRule.class ),
+         Collections.singletonList( AvoidJavaCollectionFrameworkRule.class )
       );
    }
 }

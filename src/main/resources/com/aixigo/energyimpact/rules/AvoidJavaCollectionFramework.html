@@ -1,0 +1,43 @@
+<p> In recent research (see <a
+   href="https://doi.org/10.1007/s10664-021-09950-y">Improving
+   energy-efficiency by recommending Java collections</a>) it has been
+   discovered that <code>ArrayList</code> and other collections are less
+   energy-efficient than the implementations of Eclipse Collections or Apache
+   Commons. In summary, using <code>ArrayList</code> may lead to higher Carbon
+   footprint of your software. <q
+      cite="https://doi.org/10.1007/s10664-021-09950-y"> “Among all 724
+      recommendations made to desktop systems, 666 used alternative
+      implementations to JCF, 294 from Apache Commons and 372 from Eclipse
+      Collections. Once again it is possible to observe a trend of replacing
+      well-known collections such as ArrayList, Hashtable, and HashMap by more
+      energy-efficient but less-known alternatives.”
+   </q>
+</p>
+
+<h2>Noncompliant Code Example</h2>
+
+An <code>ArrayList</code> is less energy-efficient:
+
+<pre>
+   List<String> listItems = new ArrayList<>();
+</pre>
+
+A <code>HashMap</code> is less energy-efficient:
+
+<pre>
+   Map<String> mapItems = new HashMap<>();
+</pre>
+
+<h2>Compliant Solution</h2>
+
+A <code>FastList</code> is more energy-efficient than <code>ArrayList</code>:
+
+<pre>
+   List<String> listItems = new org.eclipse.collections.impl.list.mutable.FastList();
+</pre>
+
+A <code>HashedMap</code> is more energy-efficient than <code>HashMap</code>:
+
+<pre>
+   Map<String> mapItems = org.apache.commons.collections4.map.HashedMap<>();
+</pre>

@@ -2,15 +2,16 @@ package com.aixigo.energyimpact.rules;
 
 import java.util.Collections;
 import org.sonar.api.SonarRuntime;
+import org.sonar.api.server.rule.RulesDefinition;
 import org.sonarsource.analyzer.commons.RuleMetadataLoader;
 
-public class RulesDefinition implements org.sonar.api.server.rule.RulesDefinition
+public class JavaEnergyImpactRulesDefinition implements RulesDefinition
 {
    public static final String REPOSITORY_KEY = "java-energyimpact";
 
    private final SonarRuntime runtime;
 
-   public RulesDefinition( SonarRuntime runtime )
+   public JavaEnergyImpactRulesDefinition( SonarRuntime runtime )
    {
       this.runtime = runtime;
    }
@@ -28,7 +29,7 @@ public class RulesDefinition implements org.sonar.api.server.rule.RulesDefinitio
 
       ruleMetadataLoader.addRulesByAnnotatedClass(
          repository,
-         Collections.singletonList( AvoidArrayListRule.class )
+         Collections.singletonList( AvoidJavaCollectionFrameworkRule.class )
       );
 
       repository.done();

@@ -22,12 +22,12 @@ import org.sonar.plugins.java.api.IssuableSubscriptionVisitor;
 import org.sonar.plugins.java.api.tree.NewClassTree;
 import org.sonar.plugins.java.api.tree.Tree;
 
-@Rule( key = "AvoidArrayList" )
-public class AvoidArrayListRule extends IssuableSubscriptionVisitor
+@Rule( key = "AvoidJavaCollectionFramework" )
+public class AvoidJavaCollectionFrameworkRule extends IssuableSubscriptionVisitor
 {
 
    @Override
-   public List< Tree.Kind > nodesToVisit()
+   public List<Tree.Kind> nodesToVisit()
    {
       return Collections.singletonList( Tree.Kind.NEW_CLASS );
    }
@@ -35,8 +35,12 @@ public class AvoidArrayListRule extends IssuableSubscriptionVisitor
    @Override
    public void visitNode( Tree tree )
    {
-      if( ( (NewClassTree) tree ).symbolType().isSubtypeOf( "java.util.ArrayList" ) ) {
+      var symbolType = ( (NewClassTree) tree ).symbolType();
+      if( symbolType.isSubtypeOf( "java.util.ArrayList" ) ) {
          reportIssue( tree, "Avoid ArrayList in favor of energy-efficient List implementation" );
+      }
+      else if( symbolType.isSubtypeOf( "java.util.HashMap" ) ) {
+         reportIssue( tree, "Avoid HashMap in favor of energy-efficient Map implementation" );
       }
    }
 
