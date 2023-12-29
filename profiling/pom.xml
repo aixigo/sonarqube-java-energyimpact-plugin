@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+
+   <parent>
+      <groupId>com.aixigo.java-energyimpact</groupId>
+      <artifactId>java-energyimpact</artifactId>
+      <version>0.2.0-SNAPSHOT</version>
+   </parent>
+
+   <artifactId>java-energyimpact-profiler</artifactId>
+
+   <dependencies>
+      <dependency>
+         <groupId>org.apache.commons</groupId>
+         <artifactId>commons-collections4</artifactId>
+         <version>4.4</version>
+      </dependency>
+
+      <dependency>
+         <groupId>org.eclipse.collections</groupId>
+         <artifactId>eclipse-collections-api</artifactId>
+         <version>11.1.0</version>
+      </dependency>
+      <dependency>
+         <groupId>org.eclipse.collections</groupId>
+         <artifactId>eclipse-collections</artifactId>
+         <version>11.1.0</version>
+      </dependency>
+
+      <dependency>
+         <groupId>org.openjdk.jmh</groupId>
+         <artifactId>jmh-core</artifactId>
+         <version>1.38-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+         <groupId>org.openjdk.jmh</groupId>
+         <artifactId>jmh-generator-annprocess</artifactId>
+         <version>1.38-SNAPSHOT</version>
+      </dependency>
+   </dependencies>
+
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <version>3.6.0</version>
+            <configuration>
+               <descriptorRefs>
+                  <descriptorRef>jar-with-dependencies</descriptorRef>
+               </descriptorRefs>
+               <archive>
+                  <manifest>
+                     <addClasspath>true</addClasspath>
+                     <mainClass>com.aixigo.energyimpact.profiling.BenchmarkRunner</mainClass>
+                  </manifest>
+               </archive>
+            </configuration>
+            <executions>
+               <execution>
+                  <id>assemble-all</id>
+                  <phase>package</phase>
+                  <goals>
+                     <goal>single</goal>
+                  </goals>
+               </execution>
+            </executions>
+         </plugin>
+      </plugins>
+   </build>
+</project>
